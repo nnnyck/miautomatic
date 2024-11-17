@@ -2,6 +2,12 @@
 
 Este projeto utiliza um módulo ESP-01 para se conectar a uma rede Wi-Fi e enviar seu endereço IP a um servidor Node.js rodando com Express. O objetivo é registrar o IP do ESP-01 assim que ele se conecta à rede, usando uma requisição HTTP.
 
+Para iniciar a interface utilize o comando:
+
+### `npm start`
+
+E em seu navegador abra [http://localhost:3000](http://localhost:3000).
+
 ## Componentes Necessários
 - Arduino Uno
 - ESP-01
