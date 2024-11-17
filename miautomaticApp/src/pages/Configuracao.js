@@ -69,7 +69,7 @@ const Configuracao = () => {
     console.log('Configurações antes de salvar:', config); 
     localStorage.setItem('mealConfig', JSON.stringify(config));
 
-    navigate('/principal');
+    navigate('/Home');
   };
   
   return (

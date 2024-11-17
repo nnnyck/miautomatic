@@ -1,11 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Typography, Button, Snackbar, Alert } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
-const Principal = () => {
+const Home = () => {
   const [nextMealTime, setNextMealTime] = useState(null);
   const [timeRemaining, setTimeRemaining] = useState('');
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [nomeAnimal, setNomeAnimal] = useState('');
+  const theme = useTheme();
+
+  useEffect(() => {
+    document.body.style.backgroundColor = theme.palette.background.default;
+
+    return () => {
+      document.body.style.backgroundColor = '';
+    };
+  }, [theme]);
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
 
   const calculateTimeUntilNextMeal = () => {
     const config = JSON.parse(localStorage.getItem('mealConfig'));
@@ -77,14 +95,14 @@ const Principal = () => {
         color="primary"
         onClick={handleFeedNow}
         style={{
-          width: '150px',
-          height: '150px',
+          width: '240px',
+          height: '240px',
           borderRadius: '50%',
-          fontSize: '18px',
+          fontSize: '24px',
           fontWeight: 'bold',
         }}
       >
-        Alimentar
+        Alimentar agora
       </Button>
 
       <Snackbar
@@ -114,4 +132,4 @@ const Principal = () => {
   );
 };
 
-export default Principal;
+export default Home;
